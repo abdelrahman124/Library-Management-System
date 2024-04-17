@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Management System</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Book Management System</h1>
+
+      <div id="num-books">
+        <h2>Enter Number of Books</h2>
+        <form id="numBooksForm" onsubmit="startAddingBooks(event)">
+          <label for="numBooksInput">Number of Books:</label>
+          <input type="number" id="numBooksInput" min="1" required />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+
+      <div id="data-form" style="display: none">
+        <h2>Add Books</h2>
+        <form id="input-form">
+          <label for="bookName">Book Name:</label>
+          <input
+            type="text"
+            id="bookName"
+            name="bookName"
+            pattern="[a-zA-Z0-9\s]+"
+            title="Please enter letters, numbers, or spaces only"
+            required
+          /><br />
+          <label for="bookPrice">Price:</label>
+          <input
+            type="number"
+            id="bookPrice"
+            name="bookPrice"
+            min="0"
+            required
+          /><br />
+          <label for="authorName">Author Name:</label>
+          <input
+            type="text"
+            id="authorName"
+            name="authorName"
+            pattern="[a-zA-Z\s]+"
+            title="Please enter letters or spaces only"
+            required
+          /><br />
+          <label for="authorEmail">Author Email:</label>
+          <input
+            type="email"
+            id="authorEmail"
+            name="authorEmail"
+            required
+          /><br />
+          <button type="button" onclick="addBook()">Add Book</button>
+        </form>
+      </div>
+
+      <div id="data-table" style="display: none">
+        <h2>Books Information</h2>
+        <table id="table">
+          <tr>
+            <th>Book Name</th>
+            <th>Price</th>
+            <th>Author Name</th>
+            <th>Author Email</th>
+            <th>Actions</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+<script src="script.js"></script>
+  </body>
+</html>
